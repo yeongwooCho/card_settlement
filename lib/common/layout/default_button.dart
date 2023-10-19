@@ -15,8 +15,8 @@ class DefaultElevatedButton extends StatelessWidget {
 
   const DefaultElevatedButton({
     super.key,
-    required this.child,
     required this.onPressed,
+    required this.child,
     this.foregroundColor = MyColor.whiteText,
     this.backgroundColor = MyColor.primary,
     this.textStyle = MyTextStyle.bodyBold,
