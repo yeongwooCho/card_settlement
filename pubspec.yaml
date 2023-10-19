@@ -36,6 +36,13 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
 
+  intl: 0.18.1 # 국가 관련
+  fluttertoast: ^8.2.2 # toast
+  flutter_localizations: # intl 0.18.0 을 의존하고 있음
+    sdk: flutter
+
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
