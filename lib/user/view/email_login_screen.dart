@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../common/component/custom_text_form_field.dart';
-import '../../common/component/show/custom_toast.dart';
 import '../../common/const/colors.dart';
 import '../../common/layout/default_appbar.dart';
 import '../../common/layout/default_layout.dart';
@@ -50,13 +49,33 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
+                const SizedBox(height: 96.0),
+                Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      width: 10.0,
+                      color: MyColor.darkGrey,
+                    ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(50.0),
+                    child: Text(
+                      "로고",
+                      style: MyTextStyle.appName,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
                 const SizedBox(height: 48.0),
                 CustomTextFormField(
                   onChanged: (String value) {},
                   onSaved: (String? value) {
                     emailText = value;
                   },
-                  validator: TextValidator.emailValidator,
+                  validator: (String? value) {
+                    return null;
+                  },
+                  // validator: TextValidator.emailValidator,
                   focusNode: emailFocus,
                   onEditingComplete: () {
                     if (formKey.currentState!.validate()) {
@@ -65,8 +84,8 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
                       emailFocus.requestFocus();
                     }
                   },
-                  title: '이메일',
-                  hintText: '이메일 입력',
+                  title: '사업자 번호',
+                  hintText: "사업자 번호 10자리 입력",
                   textInputType: TextInputType.emailAddress,
                 ),
                 const SizedBox(height: 24.0),
@@ -124,9 +143,11 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
                           //   RouteNames.terms,
                           // );
                         },
-                        child: const Text(
+                        child: Text(
                           '회원가입',
-                          style: MyTextStyle.description,
+                          style: MyTextStyle.description.copyWith(
+                            color: MyColor.darkGrey,
+                          ),
                         ),
                       ),
                     ),
@@ -140,9 +161,11 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
                         onPressed: () {
                           // Navigator.of(context).pushNamed(RouteNames.findEmail);
                         },
-                        child: const Text(
+                        child: Text(
                           '이메일 찾기',
-                          style: MyTextStyle.description,
+                          style: MyTextStyle.description.copyWith(
+                            color: MyColor.darkGrey,
+                          ),
                         ),
                       ),
                     ),
@@ -157,9 +180,11 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
                           // Navigator.of(context)
                           //     .pushNamed(RouteNames.findPassword);
                         },
-                        child: const Text(
+                        child: Text(
                           '비밀번호 찾기',
-                          style: MyTextStyle.description,
+                          style: MyTextStyle.description.copyWith(
+                            color: MyColor.darkGrey,
+                          ),
                         ),
                       ),
                     ),
@@ -181,15 +206,8 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
       formKey.currentState!.save();
     }
 
-    if (emailText == null ||
-        passwordText == null ||
-        emailText!.isEmpty ||
-        passwordText!.isEmpty) {
-      showCustomToast(context, msg: '올바른 계정 정보를 입력해주세요.');
-    } else {
-      Navigator.of(context).pushNamed(
-        RouteNames.root,
-      );
-    }
+    Navigator.of(context).pushNamed(
+      RouteNames.root,
+    );
   }
 }
