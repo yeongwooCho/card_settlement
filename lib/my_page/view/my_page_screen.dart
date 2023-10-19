@@ -47,7 +47,11 @@ class MyPageScreen extends StatelessWidget {
             const SizedBox(height: 48.0),
             CustomListCard(
               title: '개인 정보 관리',
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pushNamed(
+                  RouteNames.settings,
+                );
+              },
               isSuffix: true,
             ),
             CustomListCard(

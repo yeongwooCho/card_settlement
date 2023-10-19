@@ -1,4 +1,5 @@
 import 'package:card_settlement/common/view/root_tab.dart';
+import 'package:card_settlement/my_page/view/settings_screen.dart';
 import 'package:card_settlement/my_page/view/withdraw_screen.dart';
 import 'package:card_settlement/user/view/email_login_screen.dart';
 import 'package:flutter/material.dart';
@@ -44,4 +45,5 @@ Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
 
   // my page
   RouteNames.withdraw: (_) => WithdrawScreen(),
+  RouteNames.settings: (_) => SettingsScreen(),
 };
