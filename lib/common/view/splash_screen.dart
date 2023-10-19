@@ -1,6 +1,7 @@
 import 'package:card_settlement/common/const/colors.dart';
 import 'package:card_settlement/common/const/text_style.dart';
 import 'package:card_settlement/common/layout/default_layout.dart';
+import 'package:card_settlement/common/variable/routes.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -52,6 +53,9 @@ class _SplashScreenState extends State<SplashScreen> {
   void delay() async {
     await Future.delayed(const Duration(seconds: 1));
 
+    Navigator.of(context).pushNamed(
+      RouteNames.root,
+    );
   }
 
 // void initSplash() async {
