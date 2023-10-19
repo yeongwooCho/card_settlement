@@ -206,8 +206,9 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
       formKey.currentState!.save();
     }
 
-    Navigator.of(context).pushNamed(
+    Navigator.of(context).pushNamedAndRemoveUntil(
       RouteNames.root,
+      (route) => false,
     );
   }
 }

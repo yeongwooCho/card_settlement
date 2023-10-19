@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 
 class CustomListCard extends StatelessWidget {
   final String title;
-  final String description;
   final void Function()? onTap;
+  final bool isSuffix;
 
   const CustomListCard({
     Key? key,
     required this.title,
-    required this.description,
     required this.onTap,
+    required this.isSuffix,
   }) : super(key: key);
 
   @override
@@ -21,33 +21,23 @@ class CustomListCard extends StatelessWidget {
       child: Container(
         color: MyColor.empty,
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 16.0),
+          padding: const EdgeInsets.symmetric(vertical: 12.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      style: MyTextStyle.bodyBold,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    const SizedBox(height: 8.0),
-                    Text(
-                      description,
-                      style: MyTextStyle.description,
-                    ),
-                  ],
-                ),
-              ),
+                  child: Text(
+                title,
+                style: MyTextStyle.bodyBold,
+                overflow: TextOverflow.ellipsis,
+              )),
               const SizedBox(width: 16.0),
-              const Icon(
-                Icons.chevron_right,
-                size: 30.0,
-              ),
+              isSuffix
+                  ? const Icon(
+                      Icons.chevron_right,
+                      size: 30.0,
+                    )
+                  : const SizedBox(width: 1.0),
             ],
           ),
         ),

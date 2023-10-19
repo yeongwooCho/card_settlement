@@ -1,4 +1,5 @@
 import 'package:card_settlement/common/view/root_tab.dart';
+import 'package:card_settlement/my_page/view/withdraw_screen.dart';
 import 'package:card_settlement/user/view/email_login_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -21,6 +22,11 @@ class RouteNames {
   static const String findPasswordChange = '/user/find/password/change';
   static const String terms = '/user/terms';
   static const String termsDetail = '/user/terms/detail';
+
+  // my page
+  static const String myPage = '/myPage';
+  static const String settings = '/myPage/settings';
+  static const String withdraw = '/myPage/withdraw';
 }
 
 Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
@@ -35,4 +41,7 @@ Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
 
   // user
   RouteNames.emailSignIn: (_) => EmailLoginScreen(),
+
+  // my page
+  RouteNames.withdraw: (_) => WithdrawScreen(),
 };

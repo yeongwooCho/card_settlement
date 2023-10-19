@@ -1,5 +1,8 @@
 import 'package:card_settlement/common/const/colors.dart';
 import 'package:card_settlement/common/layout/default_layout.dart';
+import 'package:card_settlement/home/view/calculate_screen.dart';
+import 'package:card_settlement/my_page/view/my_page_screen.dart';
+import 'package:card_settlement/home/view/sales_screen.dart';
 import 'package:flutter/material.dart';
 
 class RootTab extends StatefulWidget {
@@ -20,8 +23,8 @@ class _RootTabState extends State<RootTab> with TickerProviderStateMixin {
     controller = TabController(
       length: getItems().length,
       vsync: this,
-      initialIndex: 1,
     );
+    controller?.addListener(tabListener);
   }
 
   @override
@@ -42,15 +45,9 @@ class _RootTabState extends State<RootTab> with TickerProviderStateMixin {
         child: TabBarView(
           controller: controller,
           children: [
-            Center(
-              child: Text('1'),
-            ),
-            Center(
-              child: Text('2'),
-            ),
-            Center(
-              child: Text('3'),
-            ),
+            SalesScreen(),
+            CalculateScreen(),
+            MyPageScreen(),
           ],
         ),
       ),

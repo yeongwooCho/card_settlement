@@ -17,22 +17,22 @@ class MyTextStyle {
   );
 
   static const bodyBold = TextStyle(
-    fontSize: 16.0,
+    fontSize: 18.0,
     fontWeight: FontWeight.bold,
   );
 
   static const bodyMedium = TextStyle(
-    fontSize: 16.0,
+    fontSize: 18.0,
     fontWeight: FontWeight.w500,
   );
 
   static const bodyRegular = TextStyle(
-    fontSize: 16.0,
+    fontSize: 18.0,
     fontWeight: FontWeight.w300,
   );
 
   static const description = TextStyle(
-    fontSize: 14.0,
+    fontSize: 16.0,
     fontWeight: FontWeight.w400,
   );
 }

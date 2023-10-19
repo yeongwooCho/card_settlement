@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class DefaultElevatedButton extends StatelessWidget {
   final Widget child;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final Color foregroundColor;
   final Color backgroundColor;
   final TextStyle? textStyle;

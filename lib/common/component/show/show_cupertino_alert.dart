@@ -10,6 +10,7 @@ void showAlert({
   Widget? contentWidget,
 }) {
   showCupertinoDialog(
+    barrierDismissible: true,
     context: context,
     builder: (BuildContext context) {
       return CupertinoAlertDialog(
