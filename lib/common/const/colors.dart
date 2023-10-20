@@ -41,5 +41,9 @@ class MyColor {
   // APPLE LOGIN
   static const appleForeground = Color(0xFFFFFFFF);
   static const appleBackground = Color(0xFF000000);
-}
 
+  // Chart
+  static const chartBackground = Color(0xff232d37);
+  static const chartLinePrimary = Color(0xff23b6e6);
+  static const chartLineSecondary = Color(0xff02d39a);
+}

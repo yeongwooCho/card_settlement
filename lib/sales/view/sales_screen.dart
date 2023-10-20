@@ -1,3 +1,4 @@
+import 'package:card_settlement/sales/component/custom_chart.dart';
 import 'package:flutter/material.dart';
 
 import '../../common/layout/default_appbar.dart';
@@ -12,6 +13,11 @@ class SalesScreen extends StatelessWidget {
       appbar: const DefaultAppBar(title: '매출 조회'),
       child: Column(
         children: [
+          CustomChart(
+            leftTitle: '매출(천원)',
+            bottomTitle: '시간(월)',
+            data: [],
+          ),
           Text('asfd'),
         ],
       ),
