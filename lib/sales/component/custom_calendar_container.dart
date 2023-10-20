@@ -47,7 +47,7 @@ class _CustomCalendarScreenState extends State<CustomCalendarScreen> {
                   style: MyTextStyle.bodyBold,
                 ),
                 Text(
-                  "${num2.convertIntToMoneyString()} 원",
+                  "${num1.convertIntToMoneyString()} 원",
                   style: MyTextStyle.bodyMedium,
                 ),
               ],
@@ -63,7 +63,7 @@ class _CustomCalendarScreenState extends State<CustomCalendarScreen> {
                   style: MyTextStyle.bodyBold,
                 ),
                 Text(
-                  "${num1.convertIntToMoneyString()} 원",
+                  "${num2.convertIntToMoneyString()} 원",
                   style: MyTextStyle.bodyMedium,
                 ),
               ],

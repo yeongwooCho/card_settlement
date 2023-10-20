@@ -2,10 +2,18 @@ import 'package:flutter/material.dart';
 
 import '../../common/component/custom_container_button.dart';
 import '../../common/const/text_style.dart';
+import '../view/sales_detail_screen.dart';
 import 'custom_chart.dart';
 
 class CustomCalculateScreen extends StatefulWidget {
-  const CustomCalculateScreen({super.key});
+  final String title;
+  final String detailTitle;
+
+  const CustomCalculateScreen({
+    super.key,
+    required this.title,
+    required this.detailTitle,
+  });
 
   @override
   State<CustomCalculateScreen> createState() => _CustomCalculateScreenState();
@@ -26,12 +34,20 @@ class _CustomCalculateScreenState extends State<CustomCalculateScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
-                '기간별 카드사 매출',
+              Text(
+                widget.title,
                 style: MyTextStyle.headTitle,
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => SalesDetailScreen(
+                        title: widget.detailTitle,
+                      ),
+                    ),
+                  );
+                },
                 child: const Text(
                   '매출 상세보기',
                   style: MyTextStyle.descriptionRegular,
