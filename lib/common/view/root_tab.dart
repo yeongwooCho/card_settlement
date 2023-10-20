@@ -1,9 +1,10 @@
 import 'package:card_settlement/common/const/colors.dart';
 import 'package:card_settlement/common/layout/default_layout.dart';
-import 'package:card_settlement/home/view/calculate_screen.dart';
+import 'package:card_settlement/calculate/view/calculate_screen.dart';
 import 'package:card_settlement/my_page/view/my_page_screen.dart';
-import 'package:card_settlement/home/view/sales_screen.dart';
 import 'package:flutter/material.dart';
+
+import '../../sales/view/sales_screen.dart';
 
 class RootTab extends StatefulWidget {
   const RootTab({Key? key}) : super(key: key);

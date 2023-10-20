@@ -1,8 +1,12 @@
+import 'package:card_settlement/calculate/view/right_now_screen.dart';
+import 'package:card_settlement/common/view/custom_completion_screen.dart';
 import 'package:card_settlement/common/view/root_tab.dart';
 import 'package:card_settlement/my_page/view/settings_screen.dart';
 import 'package:card_settlement/my_page/view/withdraw_screen.dart';
 import 'package:card_settlement/user/view/email_login_screen.dart';
 import 'package:flutter/material.dart';
+
+import '../model/screen_arguments.dart';
 
 class RouteNames {
   // initial
@@ -28,6 +32,9 @@ class RouteNames {
   static const String myPage = '/myPage';
   static const String settings = '/myPage/settings';
   static const String withdraw = '/myPage/withdraw';
+
+  // calculate
+  static const String rightNow = '/right/now';
 }
 
 Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
@@ -36,6 +43,15 @@ Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
   //   final args = ModalRoute.of(context)?.settings.arguments as ScreenArguments<String>;
   //   return FindEmailCompletionScreen(email: args.data);
   // },
+
+  // global
+  RouteNames.completion: (context) {
+    final args = ModalRoute.of(context)?.settings.arguments
+        as ScreenArguments<Map<String, dynamic>>;
+    return CustomCompletionScreen(
+      title: args.data['title'],
+    );
+  },
 
   // root tab
   RouteNames.root: (_) => RootTab(),
@@ -46,4 +62,7 @@ Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
   // my page
   RouteNames.withdraw: (_) => WithdrawScreen(),
   RouteNames.settings: (_) => SettingsScreen(),
+
+  // calculate
+  RouteNames.rightNow: (_) => RightNowScreen(),
 };
