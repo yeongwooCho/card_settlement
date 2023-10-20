@@ -75,17 +75,17 @@ class _RootTabState extends State<RootTab> with TickerProviderStateMixin {
     return const [
       BottomNavigationBarItem(
         icon: Icon(
-          Icons.list,
+          Icons.show_chart,
           size: 32.0,
         ),
-        label: '1번화면',
+        label: '매출 조회',
       ),
       BottomNavigationBarItem(
         icon: Icon(
-          Icons.home_outlined,
+          Icons.payments_rounded,
           size: 32.0,
         ),
-        label: '홈',
+        label: '정산 조회',
       ),
       BottomNavigationBarItem(
         icon: Icon(
