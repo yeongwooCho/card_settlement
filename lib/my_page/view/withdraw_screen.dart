@@ -43,7 +43,7 @@ class _WithdrawScreenState extends State<WithdrawScreen> {
                   padding: EdgeInsets.symmetric(horizontal: 8.0),
                   child: Text(
                     '◦ 탈퇴 시, 회원님의 사업자 정보와 정산 정보 모두 삭제되며 복구가 불가능 합니다.',
-                    style: MyTextStyle.description,
+                    style: MyTextStyle.descriptionRegular,
                   ),
                 ),
                 const SizedBox(height: 16.0),
@@ -51,7 +51,7 @@ class _WithdrawScreenState extends State<WithdrawScreen> {
                   padding: EdgeInsets.symmetric(horizontal: 8.0),
                   child: Text(
                     '◦ 선 정산 후 입금이 완료되지 않을 경우 탈퇴는 불가능 합니다.',
-                    style: MyTextStyle.description,
+                    style: MyTextStyle.descriptionRegular,
                   ),
                 ),
                 const SizedBox(height: 36.0),

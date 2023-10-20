@@ -47,7 +47,7 @@ class _RightNowScreenState extends State<RightNowScreen> {
                   const EdgeInsets.symmetric(vertical: 16.0, horizontal: 4.0),
               child: Text(
                 '◦  연체 발생 시, 고객님의 신용점수에 반영됩니다.\n◦ 결제가 필요한 정산이 있을 경우 회원 탈퇴가 불가능 합니다.',
-                style: MyTextStyle.description.copyWith(
+                style: MyTextStyle.descriptionRegular.copyWith(
                   color: MyColor.darkGrey,
                 ),
               ),

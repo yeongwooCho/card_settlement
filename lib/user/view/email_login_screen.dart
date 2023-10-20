@@ -145,7 +145,7 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
                         },
                         child: Text(
                           '회원가입',
-                          style: MyTextStyle.description.copyWith(
+                          style: MyTextStyle.descriptionRegular.copyWith(
                             color: MyColor.darkGrey,
                           ),
                         ),
@@ -163,7 +163,7 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
                         },
                         child: Text(
                           '이메일 찾기',
-                          style: MyTextStyle.description.copyWith(
+                          style: MyTextStyle.descriptionRegular.copyWith(
                             color: MyColor.darkGrey,
                           ),
                         ),
@@ -182,7 +182,7 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
                         },
                         child: Text(
                           '비밀번호 찾기',
-                          style: MyTextStyle.description.copyWith(
+                          style: MyTextStyle.descriptionRegular.copyWith(
                             color: MyColor.darkGrey,
                           ),
                         ),

@@ -94,7 +94,7 @@ class _CustomChartState extends State<CustomChart> {
         }
         return Text(
           title,
-          style: MyTextStyle.description.copyWith(
+          style: MyTextStyle.descriptionRegular.copyWith(
             color: MyColor.whiteText,
           ),
           textAlign: TextAlign.center,
@@ -121,7 +121,7 @@ class _CustomChartState extends State<CustomChart> {
         }
         return Text(
           title,
-          style: MyTextStyle.description.copyWith(
+          style: MyTextStyle.descriptionRegular.copyWith(
             color: MyColor.whiteText,
           ),
           textAlign: TextAlign.start,

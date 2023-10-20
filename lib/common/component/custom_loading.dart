@@ -38,7 +38,7 @@ class CustomLoadingScreen extends StatelessWidget {
                 const SizedBox(width: 16),
                 Text(
                   title,
-                  style: MyTextStyle.description,
+                  style: MyTextStyle.descriptionRegular,
                 ),
                 const SizedBox(width: 16),
               ],

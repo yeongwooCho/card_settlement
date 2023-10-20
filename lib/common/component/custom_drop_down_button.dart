@@ -32,7 +32,7 @@ class CustomDropDownButton extends StatelessWidget {
         menuMaxHeight: menuMaxHeight,
         isExpanded: true,
         underline: const SizedBox(height: 1.0),
-        style: MyTextStyle.description,
+        style: MyTextStyle.descriptionRegular,
         items: dropdownList.map((String item) {
           return DropdownMenuItem<String>(
             alignment: Alignment.center,

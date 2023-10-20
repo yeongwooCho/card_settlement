@@ -31,7 +31,17 @@ class MyTextStyle {
     fontWeight: FontWeight.w300,
   );
 
-  static const description = TextStyle(
+  static const descriptionBold = TextStyle(
+    fontSize: 16.0,
+    fontWeight: FontWeight.bold,
+  );
+
+  static const descriptionMedium = TextStyle(
+    fontSize: 16.0,
+    fontWeight: FontWeight.w500,
+  );
+
+  static const descriptionRegular = TextStyle(
     fontSize: 16.0,
     fontWeight: FontWeight.w400,
   );
