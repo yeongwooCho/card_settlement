@@ -22,17 +22,17 @@ class _SalesScreenState extends State<SalesScreen> {
         physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
-            CustomCalculateScreen(
+            const CustomCalculateScreen(
               title: '기간별 카드사 매출',
-              detailTitle: '카드사 상세 매출',
+              isCard: true,
             ),
             Container(
               height: 10.0,
               color: MyColor.lightGrey,
             ),
-            CustomCalculateScreen(
+            const CustomCalculateScreen(
               title: '기간별 배달어플 매출',
-              detailTitle: '배달어플 상세 매출',
+              isCard: false,
             ),
             Container(
               height: 10.0,

@@ -1,3 +1,4 @@
+import 'package:card_settlement/sales/view/sales_delivary_detail_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../common/component/custom_container_button.dart';
@@ -7,12 +8,12 @@ import 'custom_chart.dart';
 
 class CustomCalculateScreen extends StatefulWidget {
   final String title;
-  final String detailTitle;
+  final bool isCard;
 
   const CustomCalculateScreen({
     super.key,
     required this.title,
-    required this.detailTitle,
+    required this.isCard,
   });
 
   @override
@@ -42,9 +43,7 @@ class _CustomCalculateScreenState extends State<CustomCalculateScreen> {
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (_) => SalesDetailScreen(
-                        title: widget.detailTitle,
-                      ),
+                      builder: (_) => widget.isCard ? const SalesDetailScreen() : const SalesDeliveryDetailScreen(),
                     ),
                   );
                 },

@@ -8,15 +8,15 @@ import 'package:card_settlement/data.dart';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 
-class SalesDetailScreen extends StatelessWidget {
-  const SalesDetailScreen({
+class SalesDeliveryDetailScreen extends StatelessWidget {
+  const SalesDeliveryDetailScreen({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return DefaultLayout(
-      appbar: const DefaultAppBar(title: "카드사 상세 매출"),
+      appbar: const DefaultAppBar(title: "배달어플 상세 매출"),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
         child: DataTable2(
