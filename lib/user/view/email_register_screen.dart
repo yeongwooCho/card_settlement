@@ -151,7 +151,7 @@ class _EmailRegisterScreenState extends State<EmailRegisterScreen> {
                         inc!.isEmpty ||
                         name!.isEmpty ||
                         address!.isEmpty ||
-                        phone!.isEmpty
+                        phone!.isEmpty || !isVerify
                     ? null
                     : () {
                         Navigator.of(context).pushNamed(
