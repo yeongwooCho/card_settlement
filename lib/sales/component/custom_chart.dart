@@ -7,13 +7,15 @@ import 'package:flutter/material.dart';
 class CustomChart extends StatefulWidget {
   final String leftTitle;
   final String bottomTitle;
-  final dynamic data;
+  final List<FlSpot> data;
+  final double maxValue;
 
   const CustomChart({
     Key? key,
     required this.leftTitle,
     required this.bottomTitle,
     required this.data,
+    required this.maxValue,
   }) : super(key: key);
 
   @override
@@ -70,7 +72,7 @@ class _CustomChartState extends State<CustomChart> {
   }
 
   SideTitles getLeftSideTitles() {
-    int valueLength = 3;
+    int valueLength = 6; //widget.data.length;
     // widget.festivalModel.cumulativeParticipantCount.toString().length;
     double dotLength = valueLength > 3 ? (valueLength > 6 ? 2 : 1) : 2;
     double valueWidth = 9.0; // 숫자 width
@@ -82,7 +84,7 @@ class _CustomChartState extends State<CustomChart> {
       // interval: widget.festivalModel.cumulativeParticipantCount == 0
       //     ? 1.0
       //     : widget.festivalModel.cumulativeParticipantCount / 3,
-      interval: 10.0,
+      interval: widget.maxValue / 4.0, // 2000, //widget.data[0].y / 4.0,
       //widget.festivalModel.cumulativeParticipantCount ~/ 3 != 0
       // ? widget.festivalModel.cumulativeParticipantCount / 3
       // : 1.0,
@@ -111,7 +113,7 @@ class _CustomChartState extends State<CustomChart> {
       showTitles: true,
       reservedSize: 22,
       // text height
-      interval: 1.0,
+      interval: widget.data.length ~/ 6 != 0 ? widget.data.length / 6 : 1.0,
       // participants.length ~/ 8 != 0 ? participants.length / 8 : 1.0,
       getTitlesWidget: (double value, TitleMeta meta) {
         late String title;
@@ -132,6 +134,8 @@ class _CustomChartState extends State<CustomChart> {
 
   LineChartData getLineChardData() {
     return LineChartData(
+      minY: 0.0,
+      maxY: widget.maxValue * 10 / 9,
       lineBarsData: getLineBarsData(),
       gridData: FlGridData(
         show: true,
@@ -180,20 +184,20 @@ class _CustomChartState extends State<CustomChart> {
   }
 
   List<LineChartBarData> getLineBarsData() {
-    List<FlSpot> flSpotList = [
-      FlSpot(0, 0),
-      FlSpot(1, 30),
-      FlSpot(2, 50),
-      FlSpot(3, 0),
-      FlSpot(4, 70),
-      FlSpot(5, 10),
-      FlSpot(6, 90),
-      FlSpot(7, 30),
-    ];
+    // List<FlSpot> flSpotList = [
+    //   FlSpot(0, 0),
+    //   FlSpot(1, 30),
+    //   FlSpot(2, 50),
+    //   FlSpot(3, 0),
+    //   FlSpot(4, 70),
+    //   FlSpot(5, 10),
+    //   FlSpot(6, 90),
+    //   FlSpot(7, 30),
+    // ];
 
     return [
       LineChartBarData(
-        spots: flSpotList,
+        spots: widget.data,
         isCurved: false,
         gradient: LinearGradient(
           colors: gradientColors,

@@ -1,8 +1,12 @@
-import 'package:card_settlement/sales/view/sales_delivary_detail_screen.dart';
+import 'package:card_settlement/data/card/chart_card_day_data.dart';
+import 'package:card_settlement/data/card/chart_card_week_data.dart';
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 import '../../common/component/custom_container_button.dart';
 import '../../common/const/text_style.dart';
+import '../../data/card/chart_card_month_data.dart';
+import '../view/sales_delivary_detail_screen.dart';
 import '../view/sales_detail_screen.dart';
 import 'custom_chart.dart';
 
@@ -95,12 +99,55 @@ class _CustomCalculateScreenState extends State<CustomCalculateScreen> {
           const SizedBox(height: 16.0),
           CustomChart(
             leftTitle: '매출(천원)',
-            bottomTitle: '시간(월)',
-            data: [],
+            bottomTitle: '기간',
+            data: getData(),
+            maxValue: getMaxValue(),
           ),
         ],
       ),
     );
+  }
+
+  List<FlSpot> getData() {
+    late List<FlSpot> returnData;
+    switch (selectedItemIndex) {
+      case 0:
+        widget.isCard
+            ? returnData = chartCardDayData
+            : returnData = chartCardDayData;
+      case 1:
+        widget.isCard
+            ? returnData = chartCardWeekData
+            : returnData = chartCardDayData;
+      case 2:
+        widget.isCard
+            ? returnData = chartCardMonthData
+            : returnData = chartCardDayData;
+      default:
+        returnData = [];
+    }
+    return returnData;
+  }
+
+  double getMaxValue() {
+    late double returnData;
+    switch (selectedItemIndex) {
+      case 0:
+        widget.isCard
+            ? returnData = maxChartCardDayData
+            : returnData = maxChartCardDayData;
+      case 1:
+        widget.isCard
+            ? returnData = maxChartCardWeekData
+            : returnData = maxChartCardWeekData;
+      case 2:
+        widget.isCard
+            ? returnData = maxChartCardMonthData
+            : returnData = maxChartCardMonthData;
+      default:
+        returnData = 0.0;
+    }
+    return returnData;
   }
 }
 

@@ -13,7 +13,7 @@ class CustomLoadingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: MyColor.barrier,
+      color: MyColor.empty,
       width: double.infinity,
       height: double.infinity,
       child: Center(
@@ -29,10 +29,14 @@ class CustomLoadingScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(
-                  width: 20,
-                  height: 20,
-                  child: CircularProgressIndicator(
-                    color: MyColor.primary,
+                  width: 32,
+                  height: 32,
+                  // child: CircularProgressIndicator(
+                  //   color: MyColor.primary,
+                  // ),
+                  child: Icon(
+                    Icons.rotate_right_rounded,
+                    size: 30.0,
                   ),
                 ),
                 const SizedBox(width: 16),
