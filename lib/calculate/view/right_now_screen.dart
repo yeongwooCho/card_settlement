@@ -19,10 +19,13 @@ class RightNowScreen extends StatefulWidget {
 class _RightNowScreenState extends State<RightNowScreen> {
   DateTime now = DateTime.now();
   bool isSelected = false;
+  bool isLoading = false;
 
   @override
   Widget build(BuildContext context) {
     return DefaultLayout(
+      isLoading: isLoading,
+      // loadingWidget: const Center(child: CircularProgressIndicator()),
       appbar: const DefaultAppBar(title: '바로 정산 받기'),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 32.0, horizontal: 24.0),
@@ -44,7 +47,7 @@ class _RightNowScreenState extends State<RightNowScreen> {
             ),
             Padding(
               padding:
-                  const EdgeInsets.symmetric(vertical: 16.0, horizontal: 4.0),
+              const EdgeInsets.symmetric(vertical: 16.0, horizontal: 4.0),
               child: Text(
                 '◦  연체 발생 시, 고객님의 신용점수에 반영됩니다.\n◦ 결제가 필요한 정산이 있을 경우 회원 탈퇴가 불가능 합니다.',
                 style: MyTextStyle.descriptionRegular.copyWith(
@@ -64,14 +67,14 @@ class _RightNowScreenState extends State<RightNowScreen> {
                   children: [
                     isSelected
                         ? const Icon(
-                            Icons.check_circle,
-                            color: MyColor.primary,
-                            size: 32.0,
-                          )
+                      Icons.check_circle,
+                      color: MyColor.primary,
+                      size: 32.0,
+                    )
                         : const Icon(
-                            Icons.circle_outlined,
-                            size: 32.0,
-                          ),
+                      Icons.circle_outlined,
+                      size: 32.0,
+                    ),
                     const SizedBox(width: 16.0),
                     const Text(
                       '위 사실을 모두 확인 하였습니다.',
@@ -84,13 +87,20 @@ class _RightNowScreenState extends State<RightNowScreen> {
             const SizedBox(height: 32.0),
             DefaultElevatedButton(
               onPressed: isSelected
-                  ? () {
+                  ? () async {
+                      isLoading = true;
+                      setState(() {});
+                      await Future.delayed(const Duration(seconds: 3));
+                      isLoading = false;
+                      setState(() {});
+
                       Navigator.of(context).pushNamedAndRemoveUntil(
-                          RouteNames.completion,
-                          arguments: ScreenArguments<String>(
-                            data: '정산 받기가 완료 되었습니다.',
-                          ),
-                          (route) => false);
+                        RouteNames.completion,
+                        arguments: ScreenArguments<String>(
+                          data: '정산 받기가 완료 되었습니다.',
+                        ),
+                        (route) => false,
+                      );
                     }
                   : null,
               child: const Text('바로 정산받기'),
