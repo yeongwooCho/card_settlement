@@ -1,4 +1,4 @@
-List<dynamic> chartDeliveryData = [
+List<List<dynamic>> chartDeliveryData = [
   [DateTime(2023, 1, 1), 296792],
   [DateTime(2023, 1, 2), 130375],
   [DateTime(2023, 1, 3), 82691],
