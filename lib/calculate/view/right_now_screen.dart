@@ -87,8 +87,8 @@ class _RightNowScreenState extends State<RightNowScreen> {
                   ? () {
                       Navigator.of(context).pushNamedAndRemoveUntil(
                           RouteNames.completion,
-                          arguments: ScreenArguments(
-                            data: {'title': '정산 받기가 완료 되었습니다.'},
+                          arguments: ScreenArguments<String>(
+                            data: '정산 받기가 완료 되었습니다.',
                           ),
                           (route) => false);
                     }

@@ -35,9 +35,14 @@ class CustomDropDownButton extends StatelessWidget {
         style: MyTextStyle.descriptionRegular,
         items: dropdownList.map((String item) {
           return DropdownMenuItem<String>(
-            alignment: Alignment.center,
+            alignment: Alignment.centerLeft,
             value: item,
-            child: Text(item),
+            child: Text(
+              item,
+              style: MyTextStyle.descriptionMedium.copyWith(
+                color: MyColor.defaultText,
+              ),
+            ),
           );
         }).toList(),
         value: defaultValue,

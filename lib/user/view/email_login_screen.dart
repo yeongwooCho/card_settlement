@@ -139,30 +139,12 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
                     Expanded(
                       child: TextButton(
                         onPressed: () {
-                          // Navigator.of(context).pushNamed(
-                          //   RouteNames.terms,
-                          // );
+                          Navigator.of(context).pushNamed(
+                            RouteNames.emailSignUp,
+                          );
                         },
                         child: Text(
                           '회원가입',
-                          style: MyTextStyle.descriptionRegular.copyWith(
-                            color: MyColor.darkGrey,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      color: MyColor.darkGrey,
-                      width: 1.0,
-                      height: 14.0,
-                    ),
-                    Expanded(
-                      child: TextButton(
-                        onPressed: () {
-                          // Navigator.of(context).pushNamed(RouteNames.findEmail);
-                        },
-                        child: Text(
-                          '이메일 찾기',
                           style: MyTextStyle.descriptionRegular.copyWith(
                             color: MyColor.darkGrey,
                           ),

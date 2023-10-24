@@ -4,8 +4,10 @@ import 'package:card_settlement/common/view/root_tab.dart';
 import 'package:card_settlement/my_page/view/settings_screen.dart';
 import 'package:card_settlement/my_page/view/withdraw_screen.dart';
 import 'package:card_settlement/user/view/email_login_screen.dart';
+import 'package:card_settlement/user/view/email_register_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../../user/view/email_register_sub_screen.dart';
 import '../model/screen_arguments.dart';
 
 class RouteNames {
@@ -22,11 +24,9 @@ class RouteNames {
   // user
   static const String emailSignIn = '/user/sign/in';
   static const String emailSignUp = '/user/sign/up';
-  static const String findEmail = '/user/find/email';
+  static const String emailSignUpSub = '/user/sign/up/sub';
   static const String findPassword = '/user/find/password';
   static const String findPasswordChange = '/user/find/password/change';
-  static const String terms = '/user/terms';
-  static const String termsDetail = '/user/terms/detail';
 
   // my page
   static const String myPage = '/myPage';
@@ -46,10 +46,10 @@ Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
 
   // global
   RouteNames.completion: (context) {
-    final args = ModalRoute.of(context)?.settings.arguments
-        as ScreenArguments<Map<String, dynamic>>;
+    final args =
+        ModalRoute.of(context)?.settings.arguments as ScreenArguments<String>;
     return CustomCompletionScreen(
-      title: args.data['title'],
+      title: args.data,
     );
   },
 
@@ -58,6 +58,8 @@ Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
 
   // user
   RouteNames.emailSignIn: (_) => EmailLoginScreen(),
+  RouteNames.emailSignUp: (_) => EmailRegisterScreen(),
+  RouteNames.emailSignUpSub: (_) => EmailRegisterSubScreen(),
 
   // my page
   RouteNames.withdraw: (_) => WithdrawScreen(),
