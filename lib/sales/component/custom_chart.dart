@@ -119,7 +119,7 @@ class _CustomChartState extends State<CustomChart> {
         late String title;
         switch (value.toInt()) {
           default:
-            title = "${value.toInt()}";
+            title = "${value.toInt() + 1}";
         }
         return Text(
           title,
