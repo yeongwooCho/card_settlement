@@ -159,8 +159,8 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
                     Expanded(
                       child: TextButton(
                         onPressed: () {
-                          // Navigator.of(context)
-                          //     .pushNamed(RouteNames.findPassword);
+                          Navigator.of(context)
+                              .pushNamed(RouteNames.findPassword);
                         },
                         child: Text(
                           '비밀번호 찾기',

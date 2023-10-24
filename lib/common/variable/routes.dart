@@ -8,6 +8,8 @@ import 'package:card_settlement/user/view/email_register_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../user/view/email_register_sub_screen.dart';
+import '../../user/view/find_password_change_screen.dart';
+import '../../user/view/find_password_screen.dart';
 import '../model/screen_arguments.dart';
 
 class RouteNames {
@@ -60,6 +62,8 @@ Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
   RouteNames.emailSignIn: (_) => EmailLoginScreen(),
   RouteNames.emailSignUp: (_) => EmailRegisterScreen(),
   RouteNames.emailSignUpSub: (_) => EmailRegisterSubScreen(),
+  RouteNames.findPassword: (_) => FindPasswordScreen(),
+  RouteNames.findPasswordChange: (_) => FindPasswordChangeScreen(),
 
   // my page
   RouteNames.withdraw: (_) => WithdrawScreen(),
