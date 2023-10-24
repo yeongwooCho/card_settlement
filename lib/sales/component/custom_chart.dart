@@ -44,7 +44,7 @@ class _CustomChartState extends State<CustomChart> {
           padding: const EdgeInsets.symmetric(vertical: 24.0, horizontal: 16.0),
           child: LineChart(
             getLineChardData(),
-            duration: const Duration(seconds: 2), // Optional
+            duration: const Duration(milliseconds: 1000), // Optional
             curve: Curves.linear, // Optional
           ),
         ),
@@ -113,7 +113,7 @@ class _CustomChartState extends State<CustomChart> {
       showTitles: true,
       reservedSize: 22,
       // text height
-      interval: widget.data.length ~/ 6 != 0 ? widget.data.length / 6 : 1.0,
+      interval: widget.data.length ~/ 3 != 0 ? widget.data.length / 3 : 1.0,
       // participants.length ~/ 8 != 0 ? participants.length / 8 : 1.0,
       getTitlesWidget: (double value, TitleMeta meta) {
         late String title;
@@ -135,7 +135,7 @@ class _CustomChartState extends State<CustomChart> {
   LineChartData getLineChardData() {
     return LineChartData(
       minY: 0.0,
-      maxY: widget.maxValue * 10 / 9,
+      maxY: widget.maxValue,
       lineBarsData: getLineBarsData(),
       gridData: FlGridData(
         show: true,

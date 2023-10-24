@@ -1,5 +1,13 @@
+import 'dart:developer';
+
+import 'package:card_settlement/common/util/datetime.dart';
+import 'package:card_settlement/common/util/map_with_index.dart';
 import 'package:card_settlement/data/card/chart_card_day_data.dart';
 import 'package:card_settlement/data/card/chart_card_week_data.dart';
+import 'package:card_settlement/data/delivery/chart_delivery_data.dart';
+import 'package:card_settlement/data/delivery/chart_delivery_day_data.dart';
+import 'package:card_settlement/data/delivery/chart_delivery_month_data.dart';
+import 'package:card_settlement/data/delivery/chart_delivery_week_data.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -29,6 +37,46 @@ class _CustomCalculateScreenState extends State<CustomCalculateScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // Day
+    // int maxValue = 0;
+    // var zxc = chartDeliveryData.mapWithIndex<FlSpot>((p0, i) {
+    //   if (maxValue < p0.last) {
+    //     maxValue = p0.last;
+    //   }
+    //   return FlSpot(i.toDouble(), p0.last.toDouble() / 1000);
+    // }).toList();
+    // log(zxc.toString());
+    // log(maxValue.toString());
+
+    // Week
+    // Map<int, double> temp = {};
+    // for(dynamic e in chartDeliveryData) {
+    //   DateTime date = e.first;
+    //   double money = (e.last / 1000).roundToDouble();
+    //
+    //   if (temp.containsKey(date.getWeekNumber())) {
+    //     temp[date.getWeekNumber()] = (temp[date.getWeekNumber()]! + money);
+    //   } else {
+    //     temp[date.getWeekNumber()] = money;
+    //   }
+    // }
+    // log(temp.toString());
+
+    // // Month
+    // Map<int, double> temp = {};
+    // for(dynamic e in chartDeliveryData) {
+    //   DateTime date = e.first;
+    //   double money = (e.last / 1000).roundToDouble();
+    //
+    //
+    //   if (temp.containsKey(date.month)) {
+    //     temp[date.month] = (temp[date.month]! + money);
+    //   } else {
+    //     temp[date.month] = money;
+    //   }
+    // }
+    // log(temp.toString());
+
     return Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: 24.0,
@@ -99,7 +147,7 @@ class _CustomCalculateScreenState extends State<CustomCalculateScreen> {
           const SizedBox(height: 16.0),
           CustomChart(
             leftTitle: '매출(천원)',
-            bottomTitle: '기간',
+            bottomTitle: '기간( 23-01-01 ~ )',
             data: getData(),
             maxValue: getMaxValue(),
           ),
@@ -114,15 +162,15 @@ class _CustomCalculateScreenState extends State<CustomCalculateScreen> {
       case 0:
         widget.isCard
             ? returnData = chartCardDayData
-            : returnData = chartCardDayData;
+            : returnData = chartDeliveryDayData;
       case 1:
         widget.isCard
             ? returnData = chartCardWeekData
-            : returnData = chartCardDayData;
+            : returnData = chartDeliveryWeekData;
       case 2:
         widget.isCard
             ? returnData = chartCardMonthData
-            : returnData = chartCardDayData;
+            : returnData = chartDeliveryMonthData;
       default:
         returnData = [];
     }
@@ -135,15 +183,15 @@ class _CustomCalculateScreenState extends State<CustomCalculateScreen> {
       case 0:
         widget.isCard
             ? returnData = maxChartCardDayData
-            : returnData = maxChartCardDayData;
+            : returnData = maxChartDeliveryDayData;
       case 1:
         widget.isCard
             ? returnData = maxChartCardWeekData
-            : returnData = maxChartCardWeekData;
+            : returnData = maxChartDeliveryWeekData;
       case 2:
         widget.isCard
             ? returnData = maxChartCardMonthData
-            : returnData = maxChartCardMonthData;
+            : returnData = maxChartDeliveryMonthData;
       default:
         returnData = 0.0;
     }
