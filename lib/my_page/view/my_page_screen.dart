@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 
 import '../../common/const/colors.dart';
 import '../../common/variable/routes.dart';
+import '../../my_settings.dart';
 
 class MyPageScreen extends StatelessWidget {
   const MyPageScreen({super.key});
@@ -32,12 +33,12 @@ class MyPageScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Text(
-                      '쿠팡(주)',
+                      userData[0],
                       style: MyTextStyle.headTitle,
                     ),
                     const SizedBox(height: 4.0),
                     Text(
-                      '사업자 번호: 120-88-00767',
+                      '사업자 번호: ${userData[1]}',
                       style: MyTextStyle.bodyRegular,
                     ),
                   ],

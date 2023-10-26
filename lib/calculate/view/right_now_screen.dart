@@ -8,6 +8,7 @@ import '../../common/const/text_style.dart';
 import '../../common/layout/default_appbar.dart';
 import '../../common/layout/default_layout.dart';
 import '../../common/variable/routes.dart';
+import '../../my_settings.dart';
 
 class RightNowScreen extends StatefulWidget {
   const RightNowScreen({super.key});
@@ -36,13 +37,16 @@ class _RightNowScreenState extends State<RightNowScreen> {
             RenderContainer(
               title: '정산 상세 정보',
               data: [
-                ['상호명', '쿠팡(주)'],
-                ['사업자 번호', '120-88-00767'],
-                ['입금 은행', '농협은행'],
-                ['계좌 번호', '702022-123-234'],
-                ['입금주명', '홍길동'],
+                ['상호명', userData[0]],
+                ['사업자 번호', userData[1]],
+                ['입금 은행', userData[4]],
+                ['계좌 번호', usergData[5]],
+                ['입금주명', userData[6]],
                 ['오늘 날짜', now.convertDateTimeToDateString()],
-                ['결제 시작 일', '2023-11-15'],
+                [
+                  '결제 시작 일',
+                  '${now.month == 12 ? now.year + 1 : now.year}-${(now.month) % 12 + 1}-${15}'
+                ],
               ],
             ),
             Padding(

@@ -49,24 +49,12 @@ class _EmailLoginScreenState extends State<EmailLoginScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const SizedBox(height: 96.0),
-                Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      width: 10.0,
-                      color: MyColor.darkGrey,
-                    ),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(50.0),
-                    child: Text(
-                      "로고",
-                      style: MyTextStyle.appName,
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
+                const SizedBox(height: 60.0),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 60.0),
+                  child: Image.asset("asset/logo/logo.png"),
                 ),
-                const SizedBox(height: 48.0),
+                const SizedBox(height: 32.0),
                 CustomTextFormField(
                   onChanged: (String value) {},
                   onSaved: (String? value) {

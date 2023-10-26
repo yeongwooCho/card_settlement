@@ -1,5 +1,3 @@
-import 'package:card_settlement/common/const/colors.dart';
-import 'package:card_settlement/common/const/text_style.dart';
 import 'package:card_settlement/common/layout/default_layout.dart';
 import 'package:card_settlement/common/variable/routes.dart';
 import 'package:flutter/material.dart';
@@ -26,24 +24,9 @@ class _SplashScreenState extends State<SplashScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Center(
-            child: Container(
-              // width: 100.0,
-              decoration: BoxDecoration(
-                border: Border.all(
-                  width: 10.0,
-                  color: MyColor.darkGrey,
-                ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Text(
-                  "로고",
-                  style: MyTextStyle.appName,
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ),
+          Padding(
+            padding: const EdgeInsets.all(48.0),
+            child: Image.asset("asset/logo/logo.png"),
           ),
         ],
       ),

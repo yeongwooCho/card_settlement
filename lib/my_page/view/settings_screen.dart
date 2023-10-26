@@ -5,6 +5,7 @@ import 'package:card_settlement/common/layout/default_layout.dart';
 import 'package:flutter/material.dart';
 
 import '../../common/const/colors.dart';
+import '../../my_settings.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -41,10 +42,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ),
                 ),
                 data: [
-                  ['상호명', '쿠팡(주)'],
-                  ['사업자 번호', '120-88-00767'],
-                  ['휴대폰 번호', '010-1234-1234'],
-                  ['사업장 주소', '서울시 송파구 송파대로 570번길'],
+                  ['상호명', userData[0]],
+                  ['사업자 번호', userData[1]],
+                  ['휴대폰 번호', userData[2]],
+                  ['사업장 주소', userData[3]],
                 ],
                 isEditSelected: isFirstEditSelected,
               ),
@@ -63,10 +64,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ),
                 ),
                 data: [
-                  ['은행', '농협은행'],
-                  ['계좌번호', '702022-123-234'],
-                  ['입금주명', '홍길동'],
-                  ['결제 날짜', '15일'],
+                  ['은행', userData[4]],
+                  ['계좌번호', userData[5]],
+                  ['입금주명', userData[6]],
+                  ['결제 날짜', userData[7]],
                 ],
                 isEditSelected: isSecondEditSelected,
               ),
